@@ -6,8 +6,8 @@
       </a>
       <div class="navbar-nav ms-auto">
         <li class="nav-item">
-          <router-link :to="{ name: 'contactbook' }" class="nav-link">
-            Danh bạ
+          <router-link :to="{ name: 'productbook' }" class="nav-link">
+            Danh sách sản phẩm
             <i class="fas fa-address-book"></i>
           </router-link>
         </li>

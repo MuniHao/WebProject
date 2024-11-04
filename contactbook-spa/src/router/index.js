@@ -1,10 +1,10 @@
 import { createWebHistory, createRouter } from 'vue-router';
-import ContactBook from '@/views/ContactBook.vue';
+import ProductBook from '@/views/ProductBook.vue';
 const routes = [
   {
     path: '/',
-    name: 'contactbook',
-    component: ContactBook
+    name: 'productbook',
+    component: ProductBook
   },
   {
     path: '/:pathMatch(.*)*',
@@ -12,15 +12,15 @@ const routes = [
     component: () => import('@/views/NotFound.vue')
   },
   {
-    path: '/contacts/:id',
-    name: 'contact.edit',
-    component: () => import('@/views/ContactEdit.vue'),
-    props: (route) => ({ contactId: route.params.id })
+    path: '/products/:product_id',
+    name: 'product.edit',
+    component: () => import('@/views/ProductEdit.vue'),
+    props: (route) => ({ productId: route.params.product_id })
   },
   {
-    path: '/contacts/add',
-    name: 'contact.add',
-    component: () => import('@/views/ContactAdd.vue'),
+    path: '/products/add',
+    name: 'product.add',
+    component: () => import('@/views/ProductAdd.vue'),
     //props: (route) => ({ contactId: route.params.id })
   },
 ];

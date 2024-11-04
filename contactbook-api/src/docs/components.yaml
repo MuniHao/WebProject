@@ -34,7 +34,60 @@ components:
           format: binary
           writeOnly: true # Used in POST/PUT/PATCH 
           description: contact avatar file
-
+    Product:
+      type: object
+      properties:
+        product_id:
+          type: integer
+          readOnly: true  # Returned by HTTP GET
+          description: Unique identifier for the product
+        product_name:
+          type: string
+          description: Name of the product (e.g., iPhone 16 Pro 256GB)
+        product_price:
+          type: number
+          format: double
+          description: Price of the product
+        product_color:
+          type: string
+          description: Color of the product
+        product_description:
+          type: string
+          description: Detailed description of the product
+        product_image:
+          type: string
+          readOnly: true
+          description: URL or path to product images (can store multiple images as a JSON array)
+        product_imageFile:
+          type: string
+          format: binary
+          writeOnly: true #USE TO POST,PUT,PATCH
+          description: URL or path to product images file(can store multiple images as a JSON array)
+    Customer:
+      type: object
+      properties:
+        customer_id:
+          type: integer
+          readOnly: true  # Returned by HTTP GET
+          description: Unique identifier for the customer
+        customer_name:
+          type: string
+          description: Name of the customer
+        customer_email:
+          type: string
+          format: email
+          description: Email address of the customer
+        customer_password:
+          type: string
+          format: password
+          description: Password of the customer
+        customer_phone:
+          type: string
+          description: Phone number of the customer
+        customer_address:
+          type: string
+          description: Address of the customer
+    
     PaginationMetadata:
       type: object
       properties:
@@ -120,13 +173,21 @@ components:
                 description: Error message
 
   parameters:
-    contactIdParam:
-      name: id
-      description: Contact ID
+    productIdParam:
+      name: product_id
+      description: Product ID
       required: true
       in: path
       schema:
-        type: integer             
+        type: integer      
+  
+    customerIdParam:
+      name: customer_id
+      description: customer ID
+      required: true
+      in: path
+      schema:
+        type: integer       
     
     limitParam:
       name: limit

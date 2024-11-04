@@ -1,1 +1,1 @@
-export const DEFAULT_AVATAR = '/public/images/blank-profile-picture.png';
+export const DEFAULT_IMAGE = '/public/images/blank.png';
